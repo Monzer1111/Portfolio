@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>منذر | السيرة الذاتية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(135deg, #000000, #4b0082, #8b0000);
+      color: white;
+      overflow-x: hidden;
+      transition: background 0.8s ease;
+      min-height: 100vh;
+    }body.en-mode {
+  direction: ltr;
+  background: linear-gradient(135deg, #1a1a1a, #3b3b98, #ff0033);
+}
+
+header {
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+header h1 {
+  font-size: 6vw;
+  margin: 0;
+  word-break: break-word;
+  text-shadow: 0 0 15px #ff4081, 0 0 25px #ff4081;
+  animation: floatName 3s ease-in-out infinite;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+@keyframes floatName {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.lang-toggle {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  z-index: 100;
+}
+
+.lang-toggle button,
+.lang-toggle a.download-cv {
+  background: linear-gradient(to right, #00c3ff, #ff0066);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  white-space: nowrap;
+  box-shadow: 0 0 10px rgba(255, 0, 102, 0.6);
+}
+
+.lang-toggle button.active {
+  box-shadow: 0 0 12px #00c3ff88;
+}
+
+section {
+  padding: 2.5rem 2rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+section img.profile {
+  width: clamp(180px, 25vw, 250px);
+  height: clamp(180px, 25vw, 250px);
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #ff4c4c;
+  box-shadow: 0 0 15px #ff4c4c88;
+}
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  z-index: 100;
+  animation: floatWhats 2.5s ease-in-out infinite;
+}
+
+.floating-whatsapp img {
+  width: 65px;
+  height: 65px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px #25d366;
+  border-radius: 50%;
+}
+
+.floating-whatsapp img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes floatWhats {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.contact-icons {
+  margin-top: 2.5rem;
+}
+
+.contact-icons a {
+  display: inline-block;
+  margin: 0.5rem;
+}
+
+.contact-icons img {
+  width: 45px;
+  height: 45px;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+  .lang-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+  </style>
+</head><body>
+  <header>
+    <div class="lang-toggle">
+      <button id="langBtn" onclick="toggleLanguage(this)">EN</button>
+      <a href="cv.pdf" class="download-cv" download>CV</a>
+    </div>
+    <h1>MONZER</h1>
+  </header>  <section>
+    <img src="https://i.postimg.cc/zDCXsCGS/Snapchat-1003949945.jpg" alt="صورة منذر" class="profile"><h2 id="cv-title">السيرة الذاتية</h2>
+<p id="cv-text">
+  أنا منذر، طالب بكلية نظم ومعلومات الأعمال (BIS) ، شغوف بتطوير واجهات المستخدم وتصميم مواقع جذابة وسريعة الاستجابة. أطمح إلى تطوير مهاراتي في البرمجة والعمل على مشاريع حقيقية تعكس قدراتي وتساهم في تحسين تجربة المستخدم.
+</p>
+
+<div class="contact-icons">
+  <p>📞 رقم الهاتف / واتساب: <a href="https://wa.me/201143846245" target="_blank" style="color:#80dfff">01143846245</a></p>
+  <a href="https://www.instagram.com/monzer_motaz_1?igsh=MTlzbnNoc2ltdW1iaQ==" target="_blank" aria-label="Instagram">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram icon">
+  </a>
+</div>
+
+  </section>  <div class="floating-whatsapp">
+    <a href="https://wa.me/201143846245" target="_blank" aria-label="تواصل على واتساب">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp logo" />
+    </a>
+  </div>  <script>
+    function toggleLanguage(btn) {
+      const body = document.body;
+      const title = document.getElementById('cv-title');
+      const text = document.getElementById('cv-text');
+      const langBtn = document.getElementById('langBtn');
+
+      if (!body.classList.contains('en-mode')) {
+        body.classList.add('en-mode');
+        langBtn.classList.add('active');
+        langBtn.textContent = 'AR';
+        title.innerText = 'Resume';
+        text.innerText = "I'm Monzer, passionate about UI development and creating fast, beautiful websites. I aim to improve my programming skills and work on real-world projects that reflect my abilities and enhance the user experience.";
+      } else {
+        body.classList.remove('en-mode');
+        langBtn.classList.remove('active');
+        langBtn.textContent = 'EN';
+        title.innerText = 'السيرة الذاتية';
+        text.innerText = 'أنا منذر، شغوف بتطوير واجهات المستخدم وتصميم مواقع جذابة وسريعة الاستجابة. أطمح إلى تطوير مهاراتي في البرمجة والعمل على مشاريع حقيقية تعكس قدراتي وتساهم في تحسين تجربة المستخدم.';
+      }
+    }
+  </script></body></html>
